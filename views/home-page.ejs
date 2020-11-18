@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> home </title>
+</head>
+<body>
+
+
+    <h1>Harry Potter </h1>
+    <h2>list of houses </h2>
+    <ul style="display: flex; border: solid;">
+       <li> <img src="/mockup/1.png" >
+           <a href="/views/detail-page.ejs">gryffindor</a></li>
+       <li> <img src="/mockup/2.png" >
+           <a href="/views/detail-page.ejs">hufflepuff</a></li>
+        <li> <img src="/mockup/3.png" >
+            <a href="/views/detail-page.ejs">ravenclaw</a></li>
+        <li> <img src="/mockup/4.png" >
+            <a href="/views/detail-page.ejs">slytherin</a></li>
+    </ul>
+
+
+
+    <div>
+<% houseKey.forEach(item =>{  %>
+<form action="/characters" method="post">
+
+<input hidden type="text" value="<%=  item.charName   %>">
+<input hidden type="text" value="<%= item.charHouse    %>">
+
+<button  type="submit">Add to fav</button>
+
+
+</form>
+<%= })   %>
+
+
+    </div>
+    
+</body>
+</html>

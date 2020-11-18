@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detial</title>
+</head>
+<body>
+
+    <div>
+        <% favResult.forEach(item=>{  %>
+          <h3><%   item.charNam    %></h3>
+         <p><%   item.charhouse   %></p>
+
+
+<form action="/update/<%= item.id%>?_method=put" method="post">
+
+<input hidden type="text" value="<%=  item.charName   %>">
+<input hidden type="text" value="<%= item.charHouse    %>">
+</form>
+
+<form action="/delete/<%item.id%>?_method=delete" method="post">
+    <input hidden type="text" value="<%=  item.charName   %>">
+    <input hidden type="text" value="<%= item.charHouse    %>">
+</form>
+<% })  %>
+ 
+
+</div>
+
+    
+</body>
+</html>
